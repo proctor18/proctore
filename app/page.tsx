@@ -54,8 +54,8 @@ const projects: Project[] = [
     image: {
       src: "/projects/tutor-scheduling/tutor-app-image.png",
       alt: "Tutor Scheduling mobile app screenshot",
-      width: 348,
-      height: 558
+      width: 920,
+      height: 1408
     },
     tech: ["React Native", "Expo", "Supabase", "TypeScript"],
     links: [
@@ -259,22 +259,18 @@ function ProjectCard({ project, priority = false }: { project: Project; priority
     <article className="group overflow-hidden rounded-2xl bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)] ring-1 ring-black/5 transition duration-200 hover:-translate-y-1 hover:shadow-[0_22px_55px_rgba(0,0,0,0.16)]">
       <div className="flex min-h-full flex-col items-center text-center">
         <div className="w-full bg-white px-4 pb-2 pt-4">
-          <div
-            className="overflow-hidden rounded-xl"
-            style={{ clipPath: "inset(0 round 0.75rem)" }}
-          >
+          <div className="project-image-frame inline-flex max-w-full">
             <Image
               src={project.image.src}
               alt={project.image.alt}
               width={project.image.width}
               height={project.image.height}
               priority={priority}
-              className="block max-h-[min(72vh,46rem)] w-full rounded-xl object-contain"
-              style={{ clipPath: "inset(0 round 0.75rem)" }}
+              className="block h-auto max-h-[min(64svh,38rem)] max-w-full object-contain"
             />
           </div>
         </div>
-        <div className="flex flex-1 flex-col items-center px-6 pb-6 pt-4">
+        <div className="flex shrink-0 flex-col items-center px-6 pb-6 pt-4">
         <h3 className="text-xl font-bold text-ink">{project.title}</h3>
         <p className="mt-4 flex-1 leading-7 text-muted">{project.description}</p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">

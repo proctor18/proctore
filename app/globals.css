@@ -28,6 +28,19 @@ body {
   background: rgba(0, 0, 0, 0.12);
 }
 
+.project-image-frame {
+  border-radius: 1rem;
+  line-height: 0;
+  overflow: hidden;
+  isolation: isolate;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+
+.project-image-frame img {
+  border-radius: inherit;
+  display: block;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
