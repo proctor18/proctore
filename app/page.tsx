@@ -386,7 +386,7 @@ function EmailModal({
               Email Ethan
             </h2>
             <p className="mt-2 text-sm leading-6 text-muted">
-              Write a quick note and your email app will open with everything filled in.
+              Send a quick note directly from the site.
             </p>
           </div>
           <button
