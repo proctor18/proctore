@@ -92,7 +92,6 @@ export default function Home() {
       <section className="hero" aria-labelledby="main-heading">
         <nav className="site-nav page-gutter" aria-label="Main navigation">
           <a className="nav-name" href="#top"><span className="nav-name-rule" /> ETHAN PROCTOR</a>
-          <a className="nav-mark" href="#top" aria-label="Back to top"><HeartIcon /></a>
           <div className="nav-links">
             <a href="#work">Work</a>
             <a href="#about">About</a>
@@ -108,7 +107,7 @@ export default function Home() {
 
         <div className="hero-title page-gutter">
           <h1 id="main-heading">ETHAN PROCTOR</h1>
-          <p>.SOFTWARE DEVELOPER.</p>
+          <p>SOFTWARE DEVELOPER</p>
         </div>
 
         <div className="hero-end page-gutter">
@@ -153,10 +152,9 @@ export default function Home() {
           <h2 id="capabilities-title">WHAT I WORK WITH.</h2>
         </div>
         <div className="capability-grid">
-          <div className="capability"><span>01 /</span><h3>Frontend</h3><p>React<br />Next.js<br />TypeScript<br />Tailwind CSS<br />HTML &amp; CSS</p></div>
-          <div className="capability"><span>02 /</span><h3>Backend</h3><p>Node.js<br />Supabase<br />PostgreSQL<br />REST APIs<br />Firebase</p></div>
-          <div className="capability"><span>03 /</span><h3>Applications</h3><p>React Native<br />Expo<br />Java<br />JavaFX<br />Data visualization</p></div>
-          <div className="capability"><span>04 /</span><h3>Tools &amp; practice</h3><p>Git &amp; GitHub<br />Vercel<br />UI / UX design<br />Client communication<br />Digital strategy</p></div>
+          <div className="capability"><h3>Frontend</h3><p>React<br />Next.js<br />TypeScript<br />Tailwind CSS<br />HTML &amp; CSS</p></div>
+          <div className="capability"><h3>Backend</h3><p>Node.js<br />Supabase<br />PostgreSQL<br />REST APIs<br />Firebase</p></div>
+          <div className="capability"><h3>Tools &amp; practice</h3><p>Git &amp; GitHub<br />Vercel<br />UI / UX design<br />Data visualization<br />Digital strategy</p></div>
         </div>
       </section>
 
@@ -168,9 +166,6 @@ export default function Home() {
             <p>HAVE A PROJECT IN MIND?</p>
             <h2 id="contact-title">LET&apos;S <em>TALK.</em></h2>
           </div>
-          <button type="button" className="contact-action" onClick={() => setIsEmailModalOpen(true)}>
-            <span className="contact-action-label">GET IN TOUCH</span><span className="contact-action-arrow" aria-hidden="true">↗</span>
-          </button>
         </div>
         <a className="contact-email" href={links.email}>ethan@proctore.com</a>
       </section>
@@ -412,9 +407,6 @@ function Icon({ name }: { name: "close" | "mail" | "github" | "linkedin" }) {
 }
 
 
-function HeartIcon() {
-  return <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.55" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>;
-}
 function SocialIcon({ name }: { name: "github" | "linkedin" | "email" }) {
   if (name === "github") return <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.12c-3.1.68-3.75-1.32-3.75-1.32-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.69 2.59 1.2 3.22.92.1-.72.39-1.2.71-1.48-2.47-.28-5.06-1.24-5.06-5.49 0-1.21.43-2.2 1.14-2.98-.12-.28-.5-1.41.11-2.94 0 0 .93-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.12-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.66.11 2.94.71.78 1.14 1.77 1.14 2.98 0 4.26-2.59 5.2-5.07 5.48.4.35.76 1.03.76 2.08v3.09c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg>;
   if (name === "linkedin") return <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 2H3.55C2.7 2 2 2.67 2 3.5v17c0 .83.7 1.5 1.55 1.5h16.9c.86 0 1.55-.67 1.55-1.5v-17c0-.83-.69-1.5-1.55-1.5ZM8 18.75H5.25V9.7H8v9.05ZM6.62 8.46a1.6 1.6 0 1 1 0-3.2 1.6 1.6 0 0 1 0 3.2Zm12.13 10.29H16v-4.4c0-1.05-.02-2.4-1.47-2.4-1.47 0-1.7 1.15-1.7 2.32v4.48h-2.75V9.7h2.64v1.24h.04c.37-.7 1.26-1.45 2.6-1.45 2.79 0 3.39 1.83 3.39 4.21v5.05Z"/></svg>;
