@@ -115,7 +115,7 @@ export default function Home() {
             <a href={links.linkedin} target="_blank" rel="noreferrer"><SocialIcon name="linkedin" /> LinkedIn</a>
             <a href={links.email}><SocialIcon name="email" /> Email</a>
           </div>
-          <a href="#about" className="hero-scroll">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></a>
+          <a href="#about" className="hero-scroll">SCROLL TO EXPLORE <ArrowIcon direction="down" /></a>
         </div>
       </section>
 
@@ -124,7 +124,7 @@ export default function Home() {
         <div className="about-grid">
           <div className="section-label">ABOUT</div>
           <div className="about-copy">
-            <p id="about-title" className="about-editorial">I&apos;M ETHAN, A SOFTWARE DEVELOPER BASED IN EDMONTON WITH A BSC IN COMPUTER SCIENCE. I LIKE BUILDING WEBSITES AND APPS THAT LOOK GOOD, WORK WELL, AND MAKE LIFE A LITTLE EASIER. I ALSO RUN <a href={links.astra} target="_blank" rel="noreferrer">ASTRA SOFTWARE ↗</a>, WHERE I BUILD CUSTOM WEBSITES FOR SMALL BUSINESSES.</p>
+            <p id="about-title" className="about-editorial">I&apos;M ETHAN, A SOFTWARE DEVELOPER BASED IN EDMONTON WITH A BSC IN COMPUTER SCIENCE. I LIKE BUILDING WEBSITES AND APPS THAT LOOK GOOD, WORK WELL, AND MAKE LIFE A LITTLE EASIER. I ALSO RUN <a href={links.astra} target="_blank" rel="noreferrer">ASTRA SOFTWARE <ArrowIcon direction="external" /></a>, WHERE I BUILD CUSTOM WEBSITES FOR SMALL BUSINESSES.</p>
           </div>
         </div>
       </section>
@@ -170,7 +170,7 @@ export default function Home() {
       </section>
 
       <footer className="footer page-gutter">
-        <a href="#top">ETHAN PROCTOR <span aria-hidden="true">↑</span></a>
+        <a href="#top">ETHAN PROCTOR <ArrowIcon direction="up" /></a>
         <p>© 2026 ETHAN PROCTOR</p>
         <div><a href={links.github} target="_blank" rel="noreferrer">GITHUB</a><a href={links.linkedin} target="_blank" rel="noreferrer">LINKEDIN</a></div>
       </footer>
@@ -190,7 +190,7 @@ function ProjectRow({ project }: { project: Project }) {
           <div className="project-details">{project.details.join(" / ")}</div>
           <div className="project-links">
             {project.links.map(link => (
-              <a key={link.href} href={link.href} target="_blank" rel="noreferrer">{link.label} <span aria-hidden="true">↗</span></a>
+              <a key={link.href} href={link.href} target="_blank" rel="noreferrer">{link.label} <ArrowIcon direction="external" /></a>
             ))}
           </div>
         </div>
@@ -269,4 +269,13 @@ function SocialIcon({ name }: { name: "github" | "linkedin" | "email" }) {
   if (name === "github") return <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.12c-3.1.68-3.75-1.32-3.75-1.32-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.69 2.59 1.2 3.22.92.1-.72.39-1.2.71-1.48-2.47-.28-5.06-1.24-5.06-5.49 0-1.21.43-2.2 1.14-2.98-.12-.28-.5-1.41.11-2.94 0 0 .93-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.12-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.66.11 2.94.71.78 1.14 1.77 1.14 2.98 0 4.26-2.59 5.2-5.07 5.48.4.35.76 1.03.76 2.08v3.09c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg>;
   if (name === "linkedin") return <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 2H3.55C2.7 2 2 2.67 2 3.5v17c0 .83.7 1.5 1.55 1.5h16.9c.86 0 1.55-.67 1.55-1.5v-17c0-.83-.69-1.5-1.55-1.5ZM8 18.75H5.25V9.7H8v9.05ZM6.62 8.46a1.6 1.6 0 1 1 0-3.2 1.6 1.6 0 0 1 0 3.2Zm12.13 10.29H16v-4.4c0-1.05-.02-2.4-1.47-2.4-1.47 0-1.7 1.15-1.7 2.32v4.48h-2.75V9.7h2.64v1.24h.04c.37-.7 1.26-1.45 2.6-1.45 2.79 0 3.39 1.83 3.39 4.21v5.05Z"/></svg>;
   return <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg>;
+}
+
+function ArrowIcon({ direction }: { direction: "external" | "up" | "down" }) {
+  const path = direction === "external"
+    ? <path d="M5 19 19 5M8 5h11v11" />
+    : direction === "up"
+      ? <path d="M12 19V5m-6 6 6-6 6 6" />
+      : <path d="M12 5v14m-6-6 6 6 6-6" />;
+  return <svg className="inline-arrow-icon" aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">{path}</svg>;
 }
