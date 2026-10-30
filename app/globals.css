@@ -472,3 +472,10 @@ a { color: inherit; text-decoration: none; }
 .contact-email-block { margin-top:clamp(70px,9vw,130px); }
 .contact-email-label { margin:0 0 18px; color:#929292; font-size:10px; font-weight:400; letter-spacing:.09em; line-height:1.4; }
 .contact-email-block .contact-email-restored { margin-top:0; }
+
+/* SVG-only navigation arrows: avoid platform emoji substitution */
+.inline-arrow-icon { display:inline-block; width:13px; height:13px; vertical-align:-1px; flex-shrink:0; }
+.hero-scroll .inline-arrow-icon { margin-left:12px; width:14px; height:14px; }
+.project-links a .inline-arrow-icon { margin-left:3px; }
+.about-editorial a .inline-arrow-icon { width:.65em; height:.65em; vertical-align:0; stroke-width:1.8; }
+.footer > a .inline-arrow-icon { margin-left:3px; width:11px; height:11px; }
