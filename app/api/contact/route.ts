@@ -47,9 +47,9 @@ export async function POST(request: Request) {
   const subject = cleanText(payload.subject) || "Portfolio Contact";
   const message = cleanText(payload.message);
 
-  if (!name || !email || !message) {
+  if (!name || !email) {
     return NextResponse.json(
-      { error: "Please fill out your name, email, and message." },
+      { error: "Please fill out your name and email." },
       { status: 400 }
     );
   }
@@ -92,7 +92,7 @@ export async function POST(request: Request) {
         `Email: ${email}`,
         `Subject: ${subject}`,
         "",
-        message
+        message || "No message provided."
       ].join("\n")
     })
   });
