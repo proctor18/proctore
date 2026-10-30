@@ -161,12 +161,12 @@ export default function Home() {
         <span className="section-label">CONTACT</span>
         <div className="contact-main">
           <div>
-            <p>HAVE A PROJECT IN MIND?</p>
+            <p>HAVE A QUESTION OR PROJECT IN MIND?</p>
             <h2 id="contact-title">LET&apos;S <em>TALK.</em></h2>
           </div>
         </div>
         <ContactForm />
-        <p className="contact-alternative">PREFER EMAIL? <a href={links.email}>ethan@proctore.com</a></p>
+        <a className="contact-email contact-email-restored" href={links.email}>ethan@proctore.com</a>
       </section>
 
       <footer className="footer page-gutter">
@@ -240,10 +240,6 @@ function ContactForm() {
 
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
-      <div className="contact-form-heading">
-        <span className="contact-form-eyebrow">A NOTE TO ETHAN</span>
-        <p>Have a question or an idea? Leave a message and I&apos;ll get back to you by email.</p>
-      </div>
       <div className="contact-fields">
         <label>
           <span>Your name <span className="required">*</span></span>
@@ -262,7 +258,7 @@ function ContactForm() {
       <div className="contact-form-bottom">
         <button type="submit" disabled={submitStatus === "sending"}>
           {submitStatus === "sending" ? "SENDING..." : "SEND MESSAGE"}
-          <span aria-hidden="true">↗</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M5 19 19 5M8 5h11v11" /></svg>
         </button>
         <span>NO COMMITMENT. JUST A CONVERSATION.</span>
       </div>
