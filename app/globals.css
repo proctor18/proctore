@@ -242,3 +242,14 @@ a { color: inherit; text-decoration: none; }
   .project-text { padding-top:0; }
   .project-visual { min-height:0; aspect-ratio:16/10; }
 }
+
+/* Keep the centered heart visible in mobile navigation */
+@media (max-width:760px) {
+  .site-nav { grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); gap:10px; }
+  .nav-mark { display:flex; align-items:center; justify-content:center; }
+  .nav-links { gap:12px; }
+}
+@media (max-width:520px) {
+  .nav-name { font-size:10px; }
+  .nav-links { gap:10px; }
+}
