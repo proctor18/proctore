@@ -347,3 +347,9 @@ a { color: inherit; text-decoration: none; }
   .nav-links > a:nth-child(2) { display:inline; }
   .about-copy .about-editorial { font-size:15px; line-height:1.48; }
 }
+
+/* About editorial alignment */
+@media (min-width:761px) {
+  .about-grid { grid-template-columns:minmax(120px,.85fr) minmax(0,2.35fr); }
+}
+.about-copy .about-editorial { text-indent:2.2em; }
