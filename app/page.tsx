@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { type FormEvent, useState } from "react";
 
 type Project = {
@@ -11,7 +10,6 @@ type Project = {
   details: string[];
   links: { label: string; href: string }[];
   image?: { src: string; alt: string; width: number; height: number };
-  isCinema?: boolean;
 };
 
 const links = {
@@ -24,15 +22,6 @@ const links = {
 const projects: Project[] = [
   {
     number: "01",
-    title: "Leduc Cinemas",
-    category: "Cinema website / Web design",
-    description: "An online destination for a local cinema, bringing movies, showtimes, and visitor information into one experience.",
-    details: ["Website", "Digital experience", "Local business"],
-    links: [{ label: "Visit website", href: "https://leduccinemas.com/" }],
-    isCinema: true
-  },
-  {
-    number: "02",
     title: "Climate Data Visualization",
     category: "Capstone / Web application",
     description: "An interactive way to explore climate data, from temperature trends to emissions and renewable energy.",
@@ -42,28 +31,28 @@ const projects: Project[] = [
       { label: "Source code", href: "https://github.com/proctor18/climate-data-visualization" }
     ],
     image: {
-      src: "/projects/climate-data-visualization/climate-data-app-image.png",
-      alt: "Climate visualization application displaying charts and data",
+      src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&q=85",
+      alt: "Mountain landscape representing climate and environmental data",
       width: 1397,
       height: 1413
     }
   },
   {
-    number: "03",
+    number: "02",
     title: "Tutor Scheduling System",
     category: "Mobile application / Scheduling",
     description: "A mobile-first scheduling experience for organizing tutor availability and managing student sessions.",
     details: ["React Native", "Expo", "Supabase"],
     links: [{ label: "Source code", href: "https://github.com/proctor18/Lucidity" }],
     image: {
-      src: "/projects/tutor-scheduling/tutor-app-image.png",
-      alt: "Mobile tutor scheduling app interface",
+      src: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1400&q=85",
+      alt: "Study materials and workspace representing tutoring",
       width: 920,
       height: 1408
     }
   },
   {
-    number: "04",
+    number: "03",
     title: "Textbook Marketplace",
     category: "Web application / Marketplace",
     description: "A campus marketplace with searchable textbook listings, account access, and a connected database.",
@@ -73,22 +62,22 @@ const projects: Project[] = [
       { label: "Source code", href: "https://github.com/proctor18/textbook-marketplace" }
     ],
     image: {
-      src: "/projects/textbook-marketplace/textbook-marketplace-app-image.png",
-      alt: "Textbook marketplace web app showing available books",
+      src: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1400&q=85",
+      alt: "Rows of books in a library representing textbook exchange",
       width: 1860,
       height: 1662
     }
   },
   {
-    number: "05",
+    number: "04",
     title: "Edmonton Pet License Tracker",
     category: "Desktop application / Open data",
     description: "A Java desktop tool for exploring and understanding Edmonton pet licensing data.",
     details: ["Java", "JavaFX", "CSV data"],
     links: [{ label: "Source code", href: "https://github.com/proctor18/petLicense" }],
     image: {
-      src: "/projects/pet-license/pet-license-app-image.png",
-      alt: "Pet license data explorer desktop application",
+      src: "https://images.unsplash.com/photo-1552053831-71594a27632d?w=1400&q=85",
+      alt: "Golden retriever portrait representing pet licensing",
       width: 1562,
       height: 946
     }
@@ -103,18 +92,18 @@ export default function Home() {
       <section className="hero" aria-labelledby="main-heading">
         <nav className="site-nav page-gutter" aria-label="Main navigation">
           <a className="nav-name" href="#top"><span className="nav-name-rule" /> ETHAN PROCTOR</a>
-          <a className="nav-mark" href="#top" aria-label="Back to top">E<span>/</span>P</a>
+          <a className="nav-mark" href="#top" aria-label="Back to top"><HeartIcon /></a>
           <div className="nav-links">
             <a href="#work">Work</a>
             <a href="#about">About</a>
-            <button className="nav-contact" type="button" onClick={() => setIsEmailModalOpen(true)}>Email me</button>
+            <button className="nav-contact" type="button" onClick={() => setIsEmailModalOpen(true)}>Email</button>
           </div>
         </nav>
 
         <div className="hero-meta page-gutter">
-          <p>INDEPENDENT DEVELOPER</p>
+          <p aria-hidden="true" />
           <p>BASED IN EDMONTON, CANADA</p>
-          <p className="hero-meta-description">I BUILD THOUGHTFUL WEBSITES AND SOFTWARE THAT COMBINE CLEAR DESIGN WITH REAL-WORLD FUNCTION.</p>
+          <p className="hero-meta-description">BSc COMPUTER SCIENCE</p>
         </div>
 
         <div className="hero-title page-gutter">
@@ -125,9 +114,9 @@ export default function Home() {
         <div className="hero-end page-gutter">
           <p className="hero-end-note">PERSONAL PORTFOLIO / 2026</p>
           <div className="hero-social">
-            <a href={links.github} target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-            <a href={links.linkedin} target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
-            <a href={links.email}>Email <span aria-hidden="true">↗</span></a>
+            <a href={links.github} target="_blank" rel="noreferrer"><SocialIcon name="github" /> GitHub</a>
+            <a href={links.linkedin} target="_blank" rel="noreferrer"><SocialIcon name="linkedin" /> LinkedIn</a>
+            <a href={links.email}><SocialIcon name="email" /> Email</a>
           </div>
           <a href="#about" className="hero-scroll">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></a>
         </div>
@@ -137,12 +126,7 @@ export default function Home() {
         <div className="section-rule" />
         <div className="about-grid">
           <div className="section-label">01 / ABOUT</div>
-          <div className="about-monogram" aria-hidden="true">
-            <div className="monogram-orbit monogram-orbit-one" />
-            <div className="monogram-orbit monogram-orbit-two" />
-            <span>EP.</span>
-            <small>DESIGN × DEVELOPMENT</small>
-          </div>
+          <div className="about-portrait"><img src="/portrait-ethan.png" alt="Portrait of Ethan Proctor" /></div>
           <div className="about-copy">
             <h2 id="about-title">A little about me.</h2>
             <p>I&apos;m Ethan, a software developer based in Edmonton, Alberta, with a BSc in Computer Science.</p>
@@ -189,7 +173,7 @@ export default function Home() {
             <h2 id="contact-title">LET&apos;S <em>TALK.</em></h2>
           </div>
           <button type="button" className="contact-action" onClick={() => setIsEmailModalOpen(true)}>
-            GET IN TOUCH <span aria-hidden="true">↗</span>
+            <span className="contact-action-label">GET IN TOUCH</span><span className="contact-action-arrow" aria-hidden="true">↗</span>
           </button>
         </div>
         <a className="contact-email" href={links.email}>ethan@proctore.com</a>
@@ -224,23 +208,9 @@ function ProjectRow({ project }: { project: Project }) {
         </div>
       </div>
       <div className="project-visual">
-        {project.isCinema ? (
-          <div className="cinema-art" role="img" aria-label="Typographic Leduc Cinemas project artwork">
-            <div className="cinema-art-top"><span>LEDUC, ALBERTA</span><span>THE BIG SCREEN / 01</span></div>
-            <div className="cinema-art-glow" />
-            <div className="cinema-art-title">LEDUC<br /><em>CINEMAS.</em></div>
-            <div className="cinema-art-bottom"><span>COME FOR THE POPCORN.</span><span>STAY FOR THE SHOW.</span></div>
-          </div>
-        ) : project.image ? (
+        {project.image ? (
           <div className="project-image-wrap">
-            <Image
-              src={project.image.src}
-              alt={project.image.alt}
-              width={project.image.width}
-              height={project.image.height}
-              sizes="(max-width: 800px) 100vw, 60vw"
-              className="project-image"
-            />
+            <img src={project.image.src} alt={project.image.alt} className="project-image" loading="lazy" />
           </div>
         ) : null}
       </div>
@@ -446,3 +416,12 @@ function Icon({ name }: { name: "close" | "mail" | "github" | "linkedin" }) {
   );
 }
 
+
+function HeartIcon() {
+  return <svg width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>;
+}
+function SocialIcon({ name }: { name: "github" | "linkedin" | "email" }) {
+  if (name === "github") return <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.12c-3.1.68-3.75-1.32-3.75-1.32-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.69 2.59 1.2 3.22.92.1-.72.39-1.2.71-1.48-2.47-.28-5.06-1.24-5.06-5.49 0-1.21.43-2.2 1.14-2.98-.12-.28-.5-1.41.11-2.94 0 0 .93-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.12-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.66.11 2.94.71.78 1.14 1.77 1.14 2.98 0 4.26-2.59 5.2-5.07 5.48.4.35.76 1.03.76 2.08v3.09c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg>;
+  if (name === "linkedin") return <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 2H3.55C2.7 2 2 2.67 2 3.5v17c0 .83.7 1.5 1.55 1.5h16.9c.86 0 1.55-.67 1.55-1.5v-17c0-.83-.69-1.5-1.55-1.5ZM8 18.75H5.25V9.7H8v9.05ZM6.62 8.46a1.6 1.6 0 1 1 0-3.2 1.6 1.6 0 0 1 0 3.2Zm12.13 10.29H16v-4.4c0-1.05-.02-2.4-1.47-2.4-1.47 0-1.7 1.15-1.7 2.32v4.48h-2.75V9.7h2.64v1.24h.04c.37-.7 1.26-1.45 2.6-1.45 2.79 0 3.39 1.83 3.39 4.21v5.05Z"/></svg>;
+  return <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg>;
+}
