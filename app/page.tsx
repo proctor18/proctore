@@ -136,7 +136,6 @@ export default function Home() {
             <span className="section-label">PORTFOLIO</span>
             <h2 id="work-title">SELECTED<br /><em>WORK.</em></h2>
           </div>
-          <p>A collection of websites and software projects, from customer-facing experiences to practical tools.</p>
         </div>
         <div className="projects">
           {projects.map((project) => <ProjectRow project={project} key={project.number} />)}
