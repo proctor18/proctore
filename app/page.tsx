@@ -115,7 +115,7 @@ export default function Home() {
             <a href={links.linkedin} target="_blank" rel="noreferrer"><SocialIcon name="linkedin" /> LinkedIn</a>
             <a href={links.email}><SocialIcon name="email" /> Email</a>
           </div>
-          <a href="#about" className="hero-scroll">SCROLL TO EXPLORE <ArrowIcon direction="down" /></a>
+          <a href="#about" className="hero-scroll">SCROLL TO EXPLORE</a>
         </div>
       </section>
 
@@ -124,7 +124,7 @@ export default function Home() {
         <div className="about-grid">
           <div className="section-label">ABOUT</div>
           <div className="about-copy">
-            <p id="about-title" className="about-editorial">I&apos;M ETHAN, A SOFTWARE DEVELOPER BASED IN EDMONTON WITH A BSC IN COMPUTER SCIENCE. I LIKE BUILDING WEBSITES AND APPS THAT LOOK GOOD, WORK WELL, AND MAKE LIFE A LITTLE EASIER. I ALSO RUN <a href={links.astra} target="_blank" rel="noreferrer">ASTRA SOFTWARE <ArrowIcon direction="external" /></a>, WHERE I BUILD CUSTOM WEBSITES FOR SMALL BUSINESSES.</p>
+            <p id="about-title" className="about-editorial">I&apos;M ETHAN, A SOFTWARE DEVELOPER BASED IN EDMONTON WITH A BSC IN COMPUTER SCIENCE. I LIKE BUILDING WEBSITES AND APPS THAT LOOK GOOD, WORK WELL, AND MAKE LIFE A LITTLE EASIER. I ALSO RUN <a href={links.astra} target="_blank" rel="noreferrer">ASTRA SOFTWARE</a>, WHERE I BUILD CUSTOM WEBSITES FOR SMALL BUSINESSES.</p>
           </div>
         </div>
       </section>
@@ -170,7 +170,7 @@ export default function Home() {
       </section>
 
       <footer className="footer page-gutter">
-        <a href="#top">ETHAN PROCTOR <ArrowIcon direction="up" /></a>
+        <a href="#top">ETHAN PROCTOR</a>
         <p>© 2026 ETHAN PROCTOR</p>
         <div><a href={links.github} target="_blank" rel="noreferrer">GITHUB</a><a href={links.linkedin} target="_blank" rel="noreferrer">LINKEDIN</a></div>
       </footer>
@@ -190,7 +190,7 @@ function ProjectRow({ project }: { project: Project }) {
           <div className="project-details">{project.details.join(" / ")}</div>
           <div className="project-links">
             {project.links.map(link => (
-              <a key={link.href} href={link.href} target="_blank" rel="noreferrer">{link.label} <ArrowIcon direction="external" /></a>
+              <a key={link.href} href={link.href} target="_blank" rel="noreferrer">{link.label}</a>
             ))}
           </div>
         </div>
@@ -258,7 +258,7 @@ function ContactForm() {
       <div className="contact-form-bottom">
         <button type="submit" disabled={submitStatus === "sending"}>
           {submitStatus === "sending" ? "SENDING..." : "SEND MESSAGE"}
-          <svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M5 19 19 5M8 5h11v11" /></svg>
+          
         </button>
       </div>
     </form>
@@ -271,11 +271,3 @@ function SocialIcon({ name }: { name: "github" | "linkedin" | "email" }) {
   return <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg>;
 }
 
-function ArrowIcon({ direction }: { direction: "external" | "up" | "down" }) {
-  const path = direction === "external"
-    ? <path d="M5 19 19 5M8 5h11v11" />
-    : direction === "up"
-      ? <path d="M12 19V5m-6 6 6-6 6 6" />
-      : <path d="M12 5v14m-6-6 6 6 6-6" />;
-  return <svg className="inline-arrow-icon" aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">{path}</svg>;
-}
