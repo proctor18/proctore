@@ -253,3 +253,63 @@ a { color: inherit; text-decoration: none; }
   .nav-name { font-size:10px; }
   .nav-links { gap:10px; }
 }
+
+/* Editorial bio hierarchy inspired by the reference */
+.about-copy { max-width:420px; }
+.about-copy .about-intro {
+  color:#dfddda;
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:clamp(17px,1.45vw,23px);
+  line-height:1.43;
+  letter-spacing:-.025em;
+  margin-bottom:30px;
+}
+.about-copy .about-statement {
+  color:#929292;
+  font-size:11px;
+  line-height:1.65;
+  letter-spacing:.075em;
+  text-transform:uppercase;
+  max-width:370px;
+  margin-bottom:30px;
+}
+.about-copy .about-outro { color:#a4a4a4; font-size:12px; line-height:1.7; }
+
+/* Replace circular action with a clean editorial link */
+.contact-action, .contact-action:hover {
+  width:auto;
+  height:auto;
+  min-width:188px;
+  min-height:54px;
+  padding:0 0 14px;
+  margin:0 0 6px;
+  border:0;
+  border-bottom:1px solid #777;
+  border-radius:0;
+  background:transparent;
+  color:#eee;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:42px;
+  text-align:left;
+  font-size:11px;
+  letter-spacing:.12em;
+  transform:none;
+  overflow:visible;
+}
+.contact-action { transition:border-color .25s ease,color .25s ease; }
+.contact-action:hover { border-bottom-color:#fff; color:#fff; }
+.contact-action .contact-action-arrow {
+  position:static;
+  font-size:24px;
+  line-height:1;
+  transition:transform .25s ease;
+}
+.contact-action:hover .contact-action-arrow {transform:translate(3px,-3px);}
+@media(max-width:760px) {
+  .contact-action,.contact-action:hover {min-width:178px;min-height:50px;margin-top:0;}
+}
+@media(max-width:520px) {
+  .contact-action,.contact-action:hover {margin-top:36px;}
+}
