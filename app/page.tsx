@@ -166,7 +166,7 @@ export default function Home() {
           </div>
         </div>
         <ContactForm />
-        <a className="contact-email contact-email-restored" href={links.email}>ethan@proctore.com</a>
+        <div className="contact-email-block"><p className="contact-email-label">PREFER EMAIL?</p><a className="contact-email contact-email-restored" href={links.email}>ethan@proctore.com</a></div>
       </section>
 
       <footer className="footer page-gutter">
