@@ -260,7 +260,6 @@ function ContactForm() {
           {submitStatus === "sending" ? "SENDING..." : "SEND MESSAGE"}
           <svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M5 19 19 5M8 5h11v11" /></svg>
         </button>
-        <span>NO COMMITMENT. JUST A CONVERSATION.</span>
       </div>
     </form>
   );
